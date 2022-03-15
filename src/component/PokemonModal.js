@@ -3,55 +3,55 @@ import React from "react";
 const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   const CoolBackground = {
     background:
-      types[0] == "grass"
+      types[0] === "grass"
         ? "rgb(129, 192, 87)"
-        : types[0] == "fire"
+        : types[0] === "fire"
         ? "#DC2D28"
-        : types[0] == "rock" || types[0] == "ground"
+        : types[0] === "rock" || types[0] === "ground"
         ? "#CB99A2"
-        : types[0] == "bug"
+        : types[0] === "bug"
         ? "#E6AB09"
-        : types[0] == "water"
+        : types[0] === "water"
         ? "#5D55C4"
-        : types[0] == "electric"
+        : types[0] === "electric"
         ? "#FAE407"
-        : types[0] == "poison"
+        : types[0] === "poison"
         ? "#924A93"
-        : types[0] == "fight"
+        : types[0] === "fight"
         ? "#F55B05"
-        : types[0] == "psychic"
+        : types[0] === "psychic"
         ? "#D544A3"
-        : types[0] == "ice"
+        : types[0] === "ice"
         ? "#99D5DD"
         : "#FFE3DF",
 
     boxShadow:
-      types[0] == "grass"
+      types[0] === "grass"
         ? "0px 0px 15px 4px #81C057"
-        : types[0] == "fire"
+        : types[0] === "fire"
         ? "0px 0px 15px 4px #DC2D28"
-        : types[0] == "rock" || types[0] == "ground"
+        : types[0] === "rock" || types[0] === "ground"
         ? "0px 0px 15px 4px #CB99A2"
-        : types[0] == "bug"
+        : types[0] === "bug"
         ? "0px 0px 15px 4px #E6AB09"
-        : types[0] == "water"
+        : types[0] === "water"
         ? "0px 0px 15px 4px #5D55C4"
-        : types[0] == "electric"
+        : types[0] === "electric"
         ? "0px 0px 15px 4px #FAE407"
-        : types[0] == "poison"
+        : types[0] === "poison"
         ? "0px 0px 15px 4px #924A93"
-        : types[0] == "fight"
+        : types[0] === "fight"
         ? "0px 0px 15px 4px #F55B05"
-        : types[0] == "psychic"
+        : types[0] === "psychic"
         ? "0px 0px 15px 4px #D544A3"
-        : types[0] == "ice"
+        : types[0] === "ice"
         ? "0px 0px 15px 4px #99D5DD"
         : "0px 0px 15px 4px #FFE3DF",
   };
 
-  function pad(n) {
-    return n < 10 ? "00" + n : n >= 10 && n < 100 ? "0" + n : n;
-  }
+  // function pad(n) {
+  //   return n < 10 ? "00" + n : n >= 10 && n < 100 ? "0" + n : n;
+  // }
 
   return (
     <div style={CoolBackground} className="modal-info">
