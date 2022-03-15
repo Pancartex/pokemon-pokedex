@@ -16,14 +16,9 @@ function App() {
       .then((data) => setPokemonData(data.results));
   }, []);
 
-  function getPokemon(name) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
-      .then((res) => res.json())
-      .then((data) => setPokemonClicked(data));
-
+  function getPokemon(props) {
+    setPokemonClicked(props);
     setIsClicked(true);
-
-    console.log(name);
   }
 
   // https://pokeapi.co/api/v2/pokemon/{id}
@@ -49,7 +44,7 @@ function App() {
         {Object.keys(pokemonClicked).length > 0 && isClicked && (
           <div onClick={() => setIsClicked(false)} className="overlay">
             <PokemonModal
-              image={pokemonClicked.sprites.front_default}
+              image={pokemonClicked.image}
               id={pokemonClicked.id}
               name={pokemonClicked.name}
               abilities={pokemonClicked.abilities}

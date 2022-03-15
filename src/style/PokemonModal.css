@@ -1,28 +1,68 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .modal-info {
-  max-width: 800px;
+  max-width: 530px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 80px;
   height: 800px;
   position: relative;
   top: 10%;
   background-color: #be7027;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 1px -2px 30px 15px green;
 }
 
 .modal-title {
   display: flex;
+  justify-content: space-between;
 }
 
 .modal-pokemon-number {
-  margin-right: 100px;
+  margin: 0;
+}
+
+.modal-pokemon-name {
+  margin: 0;
 }
 
 .modal-img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
+  align-self: center;
+  /* transform: translateY(-40px); */
 }
 
-.hp {
-  height: 20px;
-  width: 70%;
+.stat-title {
+  margin: 0;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.stat-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 150px [col-start]);
+}
+
+.stat-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.abilities {
+  display: flex;
+  margin-left: 25px;
+  padding-left: 0;
+  gap: 50px;
 }
