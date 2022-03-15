@@ -1,0 +1,28 @@
+.modal-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 800px;
+  position: relative;
+  top: 10%;
+  background-color: #be7027;
+  z-index: 999;
+}
+
+.modal-title {
+  display: flex;
+}
+
+.modal-pokemon-number {
+  margin-right: 100px;
+}
+
+.modal-img {
+  width: 200px;
+  height: 200px;
+}
+
+.hp {
+  height: 20px;
+  width: 70%;
+}
