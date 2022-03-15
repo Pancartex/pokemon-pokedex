@@ -68,7 +68,7 @@
 
 .stat-wrapper {
   display: grid;
-  grid-template-columns: repeat(3, 150px [col-start]);
+  grid-template-columns: repeat(3, 165px [col-start]);
 }
 
 .stat-name {
