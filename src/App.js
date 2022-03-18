@@ -59,9 +59,6 @@ function App() {
     }
   });
 
-  if (pokemonData.length === 0) {
-    return <h3>Loading...</h3>;
-  } else {
     return (
       <div className="App">
         <Search searchData={searchData} handleSearch={handleSearch} />
@@ -80,7 +77,6 @@ function App() {
         )}
       </div>
     );
-  }
 }
 
 export default App;
