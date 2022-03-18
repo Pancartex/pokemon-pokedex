@@ -1,0 +1,18 @@
+header {
+    position: relative;
+    background-color: brown;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    width: 100%;
+    padding: 10px 10px;
+    /* display: flex;
+    justify-content: space-evenly; */
+}
+
+header>img {
+    display: block;
+    position: relative;
+    width: 200px;
+    border-radius: 10px;
+    margin: auto;
+}

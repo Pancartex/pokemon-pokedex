@@ -4,6 +4,7 @@ import "../src/style/PokemonModal.css";
 import Pokemon from "./component/Pokemon";
 import PokemonModal from "./component/PokemonModal";
 import Search from "../src/component/Search";
+import Header from "./component/Header";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -61,6 +62,7 @@ function App() {
 
     return (
       <div className="App">
+        <Header/>
         <Search searchData={searchData} handleSearch={handleSearch} />
         <ul className="pokemon-list">{pokemonList}</ul>
         {Object.keys(pokemonClicked).length > 0 && isClicked && (

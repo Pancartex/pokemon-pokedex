@@ -1,7 +1,11 @@
 import React from 'react'
+import "../style/Header.css"
 
 export default function Header() {
   return (
-    <header>Here will go the header</header>
+    <header>
+        <img src={require('../images/pokemon-symbol.jpg')}/>
+    </header>
+    
   )
 }
