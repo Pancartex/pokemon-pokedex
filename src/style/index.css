@@ -36,8 +36,10 @@ code {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 20px;
   color: #000;
+  padding-right: 40px;
 }
 
 .pokemon-list li {
