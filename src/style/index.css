@@ -23,7 +23,7 @@ html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: #222222;
   color: #fff;
 }
 
@@ -36,8 +36,10 @@ code {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 20px;
   color: #000;
+  padding-right: 40px;
 }
 
 .pokemon-list li {
