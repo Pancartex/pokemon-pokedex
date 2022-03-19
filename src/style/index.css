@@ -2,19 +2,6 @@
   box-sizing: border-box;
 }
 
-@keyframes swirl-in-fwd {
-  0% {
-    -webkit-transform: rotate(-540deg) scale(0);
-    transform: rotate(-540deg) scale(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    opacity: 1;
-  }
-}
-
 body,
 html {
   margin: 0;
@@ -101,4 +88,19 @@ code {
 .searchbar:focus,
 .searchbar.active {
   outline: 0;
+}
+
+/* Animations */
+
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
 }
