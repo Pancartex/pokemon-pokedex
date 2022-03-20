@@ -4,6 +4,20 @@ import "../src/style/PokemonModal.css";
 import Pokemon from "./component/Pokemon";
 import PokemonModal from "./component/PokemonModal";
 import Search from "../src/component/Search";
+const TYPE_COLORS = {
+  grass: "#81C057",
+  fire: "#DC2D28",
+  rock: "#CB99A2",
+  ground: "#CB99A2",
+  bug: "#E6AB09",
+  water: "#5D55C4",
+  electric: "#FAE407",
+  poison: "#924A93",
+  fight: "#F55B05",
+  psychic: "#D544A3",
+  ice: "#99D5DD",
+  default: "#FFE3DF",
+};
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -54,6 +68,7 @@ function App() {
           name={pokemon.name}
           url={pokemon.url}
           getPokemon={getPokemon}
+          TYPE_COLORS={TYPE_COLORS}
         />
       );
     }
@@ -75,6 +90,7 @@ function App() {
               abilities={pokemonClicked.abilities}
               types={pokemonClicked.types}
               stats={pokemonClicked.stats}
+              TYPE_COLORS={TYPE_COLORS}
             />
           </div>
         )}

@@ -1,29 +1,16 @@
 import React from "react";
 
-const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
+const PokemonModal = ({
+  image,
+  name,
+  abilities,
+  types,
+  stats,
+  id,
+  TYPE_COLORS,
+}) => {
   const CoolBackground = {
-    background:
-      types[0] === "grass"
-        ? "rgb(129, 192, 87)"
-        : types[0] === "fire"
-        ? "#DC2D28"
-        : types[0] === "rock" || types[0] === "ground"
-        ? "#CB99A2"
-        : types[0] === "bug"
-        ? "#E6AB09"
-        : types[0] === "water"
-        ? "#5D55C4"
-        : types[0] === "electric"
-        ? "#FAE407"
-        : types[0] === "poison"
-        ? "#924A93"
-        : types[0] === "fight"
-        ? "#F55B05"
-        : types[0] === "psychic"
-        ? "#D544A3"
-        : types[0] === "ice"
-        ? "#99D5DD"
-        : "#FFE3DF",
+    background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
 
     boxShadow:
       types[0] === "grass"
