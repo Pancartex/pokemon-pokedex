@@ -4,6 +4,8 @@ import "../src/style/PokemonModal.css";
 import Pokemon from "./component/Pokemon";
 import PokemonModal from "./component/PokemonModal";
 import Search from "../src/component/Search";
+import Header from "./component/Header";
+
 const TYPE_COLORS = {
   grass: "#81C057",
   fire: "#DC2D28",
@@ -18,6 +20,7 @@ const TYPE_COLORS = {
   ice: "#99D5DD",
   default: "#FFE3DF",
 };
+
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -74,11 +77,9 @@ function App() {
     }
   });
 
-  if (pokemonData.length === 0) {
-    return <h3>Loading...</h3>;
-  } else {
     return (
       <div className="App">
+        <Header/>
         <Search searchData={searchData} handleSearch={handleSearch} />
         <ul className="pokemon-list">{pokemonList}</ul>
         {Object.keys(pokemonClicked).length > 0 && isClicked && (
@@ -96,7 +97,6 @@ function App() {
         )}
       </div>
     );
-  }
 }
 
 export default App;

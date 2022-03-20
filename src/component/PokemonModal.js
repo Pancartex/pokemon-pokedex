@@ -42,13 +42,15 @@ const PokemonModal = ({
 
   return (
     <div style={CoolBackground} className="modal-info">
+      
+      <div className="modal-left">
       <img className="modal-img" src={image}></img>
-
       <div className="modal-title">
         <h1 className="modal-pokemon-name">{`${name
           .charAt(0)
           .toUpperCase()}${name.slice(1)}`}</h1>
         {/* <h1 className="modal-pokemon-number">#{pad(id)}</h1> */}
+      </div>
       </div>
 
       <div className="modal-main">

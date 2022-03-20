@@ -10,7 +10,7 @@ html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: #222222;
   color: #fff;
 }
 
@@ -23,8 +23,19 @@ code {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 20px;
   color: #000;
+  padding-right: 40px;
+}
+
+.loading-pokemon {
+  list-style: none;
+  color: white;
+}
+
+.loading-pokemon>img {
+  width: 180px;
 }
 
 .pokemon-list li {
@@ -38,6 +49,7 @@ code {
   cursor: pointer;
   border-radius: 10px 10px;
   box-shadow: 0px 0px;
+  animation: swirl-in-fwd .9s ease-out both;
 }
 
 .pokemon-list li > * {
@@ -76,4 +88,19 @@ code {
 .searchbar:focus,
 .searchbar.active {
   outline: 0;
+}
+
+/* Animations */
+
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
 }

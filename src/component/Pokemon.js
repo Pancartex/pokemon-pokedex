@@ -47,7 +47,9 @@ export default function Pokemon({ name, url, getPokemon, TYPE_COLORS }) {
   }
 
   if (loading) {
-    return <h3>...is Loading</h3>;
+    return <li className="loading-pokemon">
+      <img src={require("../images/pokeball.png")}/>
+    </li>
   }
   return (
     <li style={getBackgroundColor()} onClick={() => getPokemon(pokemonInfo)}>
