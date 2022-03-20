@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-export default function Pokemon({ name, url, getPokemon }) {
+// function getPokemonTypeColor(pokemonType) {
+//   return TYPE_COLORS[pokemonType] ?? TYPE_COLORS.default;
+// }
+
+export default function Pokemon({ name, url, getPokemon, TYPE_COLORS }) {
   const [pokemonInfo, setPokemonInfo] = useState({});
+  const [loading, setLoading] = useState(true);
 
   function pad(n) {
     return n < 10 ? "00" + n : n >= 10 && n < 100 ? "0" + n : n;
@@ -10,7 +15,7 @@ export default function Pokemon({ name, url, getPokemon }) {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) =>
+      .then((data) => {
         setPokemonInfo({
           id: data.id,
           name: name,
@@ -27,41 +32,21 @@ export default function Pokemon({ name, url, getPokemon }) {
           abilities: data.abilities.map((item) => {
             return item.ability.name;
           }),
-        })
-      );
+        });
+        setLoading(false);
+      });
   }, []);
 
   function getBackgroundColor() {
     if (Object.keys(pokemonInfo).length > 0) {
+      const pokemonType = pokemonInfo.types[0];
       return {
-        background:
-          pokemonInfo.types[0] === "grass"
-            ? "#81C057"
-            : pokemonInfo.types[0] === "fire"
-            ? "#DC2D28"
-            : pokemonInfo.types[0] === "rock" ||
-              pokemonInfo.types[0] === "ground"
-            ? "#CB99A2"
-            : pokemonInfo.types[0] === "bug"
-            ? "#E6AB09"
-            : pokemonInfo.types[0] === "water"
-            ? "#5D55C4"
-            : pokemonInfo.types[0] === "electric"
-            ? "#FAE407"
-            : pokemonInfo.types[0] === "poison"
-            ? "#924A93"
-            : pokemonInfo.types[0] === "fight"
-            ? "#F55B05"
-            : pokemonInfo.types[0] === "psychic"
-            ? "#D544A3"
-            : pokemonInfo.types[0] === "ice"
-            ? "#99D5DD"
-            : "#FFE3DF",
+        background: TYPE_COLORS[pokemonType] ?? TYPE_COLORS.default,
       };
     }
   }
 
-  if (Object.keys(pokemonInfo).length < 1) {
+  if (loading) {
     return <li className="loading-pokemon">
       <img src={require("../images/pokeball.png")}/>
     </li>
