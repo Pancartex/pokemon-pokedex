@@ -10,13 +10,13 @@
 }
 
 .modal-info {
-  max-width: 800px;
-  width: 80%;
+  max-width: 850px;
+  width: 90%;
   margin: 0 auto;
   /* height: 380px; */
   position: relative;
   top: 20%;
-  padding: 25px 30px 25px;
+  padding: 20px 25px;
   color: #000;
   z-index: 999;
   display: flex;
@@ -29,27 +29,29 @@
   display: flex;
 }
 
-.modal-title {
+/* .modal-title {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-}
+} */
 
 .modal-left {
-  max-width: fit-content;
-  min-width: 120px;
+  text-align: center;
   width: 25%;
 }
 
 .modal-main {
   display: flex;
   flex-direction: column;
-  margin-left: 70px;
+  margin-left: 35px;
 }
 
 .stat-container {
-  margin-right: 50px;
-  margin-top: 10px;
+  margin-top: 7px;
+}
+.stat-container>h2 {
+  font-size: 1.4rem;
+  text-align: center;
 }
 
 .modal-pokemon-number {
@@ -62,31 +64,32 @@
 }
 
 .modal-img {
-  width: 200px;
-  height: 200px;
-  position: absolute;
+  width: 100%;
+  max-width: 200px;
   top: 15%;
   left: 2.5%;
 }
 
 .stat-block {
   width: 130px;
+  flex-basis: 30%;
 }
 
 .stat-title {
+  font-size: larger;
   margin: 0;
   padding-bottom: 10px;
 }
 
 .stat-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .stat-name {
-  font-size: 20px;
+  font-size: large;
   font-weight: 600;
 }
 
@@ -97,7 +100,7 @@
 
 .abilities-container h2 {
   margin-top: 8px;
-  font-size: 1.5rem;
+  font-size: larger;
 }
 
 .abilities {
