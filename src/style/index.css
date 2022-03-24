@@ -37,6 +37,9 @@ code {
 .loading-pokemon {
   list-style: none;
   color: white;
+  border: 0px;
+  -webkit-animation: rotate-center 1s ease-in-out infinite both;
+  animation: rotate-center 1s ease-in-out infinite both;
 }
 
 .loading-pokemon > img {
@@ -44,7 +47,7 @@ code {
 }
 
 .pokemon-list li {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -54,7 +57,6 @@ code {
   cursor: pointer;
   border-radius: 10px 10px;
   box-shadow: 0px 0px;
-  animation: swirl-in-fwd 0.9s ease-out both;
 }
 
 .pokemon-list li > * {
@@ -97,15 +99,13 @@ code {
 
 /* Animations */
 
-@keyframes swirl-in-fwd {
+@keyframes rotate-center {
   0% {
-    -webkit-transform: rotate(-540deg) scale(0);
-    transform: rotate(-540deg) scale(0);
-    opacity: 0;
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    opacity: 1;
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
   }
 }
