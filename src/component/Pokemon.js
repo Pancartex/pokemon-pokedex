@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { TYPE_COLORS } from "../component/Colors";
 
-// function getPokemonTypeColor(pokemonType) {
-//   return TYPE_COLORS[pokemonType] ?? TYPE_COLORS.default;
-// }
-
-export default function Pokemon({ name, url, getPokemon, TYPE_COLORS }) {
+export default function Pokemon({ name, url, getPokemon }) {
   const [pokemonInfo, setPokemonInfo] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -47,9 +44,11 @@ export default function Pokemon({ name, url, getPokemon, TYPE_COLORS }) {
   }
 
   if (loading) {
-    return <li className="loading-pokemon">
-      <img src={require("../images/pokeball.png")}/>
-    </li>
+    return (
+      <li className="loading-pokemon">
+        <img src={require("../images/pokeball.png")} />
+      </li>
+    );
   }
   return (
     <li style={getBackgroundColor()} onClick={() => getPokemon(pokemonInfo)}>
@@ -60,8 +59,8 @@ export default function Pokemon({ name, url, getPokemon, TYPE_COLORS }) {
       )}`}</p>
       <div className="type-container">
         <p className="list-type-title">Type(s):</p>
-        {pokemonInfo.types.map((type) => {
-          return <p>{type}&nbsp;</p>;
+        {pokemonInfo.types.map((type, index) => {
+          return <p key={index}>{type}&nbsp;</p>;
         })}
       </div>
     </li>
