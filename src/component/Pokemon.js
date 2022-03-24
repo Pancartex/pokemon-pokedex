@@ -46,7 +46,7 @@ export default function Pokemon({ name, url, getPokemon }) {
   if (loading) {
     return (
       <li className="loading-pokemon">
-        <img src={require("../images/pokeball.png")} />
+        <img src={require("../images/pokeball-2.png")} />
       </li>
     );
   }
