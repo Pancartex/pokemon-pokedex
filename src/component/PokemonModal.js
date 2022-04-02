@@ -16,37 +16,39 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   return (
     <div key={id} style={CoolBackground} className="modal-info">
       <div className="modal-left">
-        <img className="modal-img" src={image}></img>
-        <div className="modal-title">
-          <h1 className="modal-pokemon-name">{`${name
-            .charAt(0)
-            .toUpperCase()}${name.slice(1)}`}</h1>
-          {/* <h1 className="modal-pokemon-number">#{pad(id)}</h1> */}
+        <div>
+          <h1 className="modal-pokemon-number">#{id}</h1>
+          <img className="modal-img" src={image}></img>
         </div>
+        <h1 className="modal-pokemon-name">{`${name
+          .charAt(0)
+          .toUpperCase()}${name.slice(1)}`}</h1>
+        {/* {types.map((type) => {
+          return <p>{type}</p>
+        })} */}
       </div>
-
-      <div className="modal-main">
+      <div className="modal-right">
+        <h3>Here will be the stats bars</h3>
         <div className="stat-container">
-          <h2 className="stat-title">Base Stats</h2>
-          <div className="stat-wrapper">
+          <div className="stat-bars">
             {stats.map((stat, index) => {
               return (
                 <div className="stat-block" key={index}>
-                  <div className="stat-name">{stat.name}</div>
+                  <h4 className="stat-name">{stat.name}</h4>
                   <p>{stat.base_stat}</p>
                 </div>
               );
             })}
           </div>
         </div>
-        <div className="abilities-container">
+        {/* <div className="abilities-container">
           <h2>Abilities</h2>
           <ul className="abilities">
             {abilities.map((name, index) => {
               return <li key={index}>{name}</li>;
             })}
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className="more-info-page">
         <Link to={`/pokemon/${name}`}>More info</Link>
