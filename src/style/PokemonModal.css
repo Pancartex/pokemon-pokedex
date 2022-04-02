@@ -23,6 +23,7 @@
   display: flex;
   justify-content: space-between;
   border-radius: 15px;
+  background-color: #F3F3F3;
   animation: bounceInDown .35s;
 }
 
@@ -42,13 +43,22 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  box-shadow: 2px 0 25px 2px #7f8c8d;
   width: 50%;
+  border-radius: 20px;
   text-align: center;
 }
 
 .modal-left>div:first-of-type{
-  height: 250px;
+  height: 200px;
   position: relative;
+}
+
+.types {
+  display: flex;
+  align-self: center;
+  width: 50%;
+  justify-content: space-around;
 }
 
 .modal-right {
@@ -64,9 +74,10 @@
 }
 
 .modal-pokemon-number {
-  font-size: 15rem;
+  font-size: 13rem;
+  height: 100%;
   margin: 0;
-  top: 45%;
+  top: 40%;
   left: 45%;
   transform: translate(-50%, -50%);
   position: absolute;
@@ -83,8 +94,8 @@
   width: 150px;
   height: 150px;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 65%;
+  left: 40%;
   transform: translate(-50%, -50%);
 }
 

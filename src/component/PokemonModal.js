@@ -6,7 +6,7 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   const CoolBackground = {
     background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
 
-    boxShadow: TYPE_COLORS_SHADOW[types[0]] ?? TYPE_COLORS_SHADOW.default,
+    // boxShadow: TYPE_COLORS_SHADOW[types[0]] ?? TYPE_COLORS_SHADOW.default,
   };
 
   // function pad(n) {
@@ -14,8 +14,8 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   // }
 
   return (
-    <div key={id} style={CoolBackground} className="modal-info">
-      <div className="modal-left">
+    <div key={id}  className="modal-info">
+      <div style={CoolBackground} className="modal-left">
         <div>
           <h1 className="modal-pokemon-number">#{id}</h1>
           <img className="modal-img" src={image}></img>
@@ -23,9 +23,10 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
         <h1 className="modal-pokemon-name">{`${name
           .charAt(0)
           .toUpperCase()}${name.slice(1)}`}</h1>
-        {/* {types.map((type) => {
-          return <p>{type}</p>
-        })} */}
+        <div className="types">
+          {types.join(' • ').toUpperCase()}
+        </div>
+        
       </div>
       <div className="modal-right">
         <h3>Here will be the stats bars</h3>
