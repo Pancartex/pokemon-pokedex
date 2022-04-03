@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { TYPE_COLORS, TYPE_COLORS_SHADOW } from "../component/Colors";
+import Bar from './Bar'
 
 const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   const CoolBackground = {
-    background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
+    // background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
+    background: '#FFFFFF'
 
-    boxShadow: TYPE_COLORS_SHADOW[types[0]] ?? TYPE_COLORS_SHADOW.default,
+    // boxShadow: TYPE_COLORS_SHADOW[types[0]] ?? TYPE_COLORS_SHADOW.default,
   };
 
   // function pad(n) {
@@ -14,42 +16,48 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   // }
 
   return (
-    <div key={id} style={CoolBackground} className="modal-info">
-      <div className="modal-left">
-        <img className="modal-img" src={image}></img>
-        <div className="modal-title">
-          <h1 className="modal-pokemon-name">{`${name
-            .charAt(0)
-            .toUpperCase()}${name.slice(1)}`}</h1>
-          {/* <h1 className="modal-pokemon-number">#{pad(id)}</h1> */}
+    <div key={id}  className="modal-info">
+      <div style={CoolBackground} className="modal-left">
+        <div>
+          <h1 className="modal-pokemon-number">#{id}</h1>
+          <img className="modal-img" src={image}></img>
         </div>
+        <h1 className="modal-pokemon-name">{`${name
+          .charAt(0)
+          .toUpperCase()}${name.slice(1)}`}</h1>
+        <div className="types">
+          {types.join(' • ').toUpperCase()}
+        </div>
+        
       </div>
-
-      <div className="modal-main">
+      <div className="modal-right">
+            <div className="more-info-page">
+              <Link to={`/pokemon/${name}`}>More info</Link>
+            </div>
         <div className="stat-container">
-          <h2 className="stat-title">Base Stats</h2>
-          <div className="stat-wrapper">
-            {stats.map((stat, index) => {
+          <div className="stat-bars">
+          {stats.map((stat, index) => {
               return (
-                <div className="stat-block" key={index}>
-                  <div className="stat-name">{stat.name}</div>
+                <div>
+                  <p>{stat.name}</p>
                   <p>{stat.base_stat}</p>
+                  <div className="bar-container">
+                    <Bar value={Math.ceil(100/255 * stat.base_stat)}/>
+                  </div>
                 </div>
+                
               );
             })}
           </div>
         </div>
-        <div className="abilities-container">
+        {/* <div className="abilities-container">
           <h2>Abilities</h2>
           <ul className="abilities">
             {abilities.map((name, index) => {
               return <li key={index}>{name}</li>;
             })}
           </ul>
-        </div>
-      </div>
-      <div className="more-info-page">
-        <Link to={`/pokemon/${name}`}>More info</Link>
+        </div> */}
       </div>
     </div>
   );
