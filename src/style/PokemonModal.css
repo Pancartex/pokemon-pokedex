@@ -10,6 +10,7 @@
 }
 
 .modal-info {
+  font-family: Arial, Helvetica, sans-serif;
   max-height: 350px;
   max-width: 900px;
   width: 80%;
