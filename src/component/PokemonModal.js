@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { TYPE_COLORS, TYPE_COLORS_SHADOW } from "../component/Colors";
+import Bar from './Bar'
 
 const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   const CoolBackground = {
-    background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
+    // background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
+    background: '#FFFFFF'
 
     // boxShadow: TYPE_COLORS_SHADOW[types[0]] ?? TYPE_COLORS_SHADOW.default,
   };
@@ -29,15 +31,21 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
         
       </div>
       <div className="modal-right">
-        <h3>Here will be the stats bars</h3>
+            <div className="more-info-page">
+              <Link to={`/pokemon/${name}`}>More info</Link>
+            </div>
         <div className="stat-container">
           <div className="stat-bars">
-            {stats.map((stat, index) => {
+          {stats.map((stat, index) => {
               return (
-                <div className="stat-block" key={index}>
-                  <h4 className="stat-name">{stat.name}</h4>
+                <div>
+                  <p>{stat.name}</p>
                   <p>{stat.base_stat}</p>
+                  <div className="bar-container">
+                    <Bar value={Math.ceil(100/255 * stat.base_stat)}/>
+                  </div>
                 </div>
+                
               );
             })}
           </div>
@@ -50,9 +58,6 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
             })}
           </ul>
         </div> */}
-      </div>
-      <div className="more-info-page">
-        <Link to={`/pokemon/${name}`}>More info</Link>
       </div>
     </div>
   );
