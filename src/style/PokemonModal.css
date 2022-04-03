@@ -70,7 +70,7 @@
 
 
 .modal-pokemon-number {
-  font-size: 10vw;
+  font-size: 7.5vw;
   margin: 0;
   top: 60%;
   left: 50%;
@@ -88,13 +88,12 @@
 .modal-img {
   width: 150px;
   height: 150px;
-  position: sticky;
-  display: block;
-  margin: auto;
-  right: 65%;
-  /* top: 65%;
+  position: absolute;
+  /* position: sticky; */
+  left: 43%;
+  top: 65%;
   
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -50%);
 }
 
 .stat-block {
