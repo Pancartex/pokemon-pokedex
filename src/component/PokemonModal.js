@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { TYPE_COLORS, TYPE_COLORS_SHADOW } from "../component/Colors";
 import Bar from './Bar'
 
-const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
+const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked}) => {
   const CoolBackground = {
     // background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
     background: '#FFFFFF'
@@ -14,6 +14,14 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   // function pad(n) {
   //   return n < 10 ? "00" + n : n >= 10 && n < 100 ? "0" + n : n;
   // }
+
+  const closeModal = (e) => {
+    console.log(e.target.id);
+    if (e.target.id === "pokemon-page-link") {
+      e.preventDefault();
+      setIsClicked(false);
+    }
+  };
 
   return (
     <div key={id}  className="modal-info">
@@ -30,9 +38,9 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
         </div>
         
       </div>
-      <div className="modal-right">
+      <div onClick={closeModal} className="modal-right">
             <div className="more-info-page">
-              <Link to={`/pokemon/${name}`}>More info</Link>
+              <Link id="pokemon-page-link" to={`/pokemon/${name}`}>More info</Link>
             </div>
         <div className="stat-container">
           <div className="stat-bars">
