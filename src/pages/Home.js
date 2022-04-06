@@ -10,6 +10,7 @@ function Home({
   isClicked,
   pokemonData,
   getPokemon,
+  setIsClicked
 }) {
   const [searchData, handleSearch] = useSearch();
 
@@ -41,6 +42,7 @@ function Home({
             abilities={pokemonClicked.abilities}
             types={pokemonClicked.types}
             stats={pokemonClicked.stats}
+            setIsClicked={setIsClicked}
           />
         </div>
       )}

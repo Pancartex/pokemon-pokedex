@@ -47,6 +47,7 @@ function App() {
                 pokemonClicked={pokemonClicked}
                 closeModal={closeModal}
                 isClicked={isClicked}
+                setIsClicked = {setIsClicked}
               />
             }
           />

@@ -6,7 +6,7 @@ import Bar from './Bar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button'
 
-const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
+const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked}) => {
   const CoolBackground = {
     // background: TYPE_COLORS[types[0]] ?? TYPE_COLORS.default,
     background: '#FFFFFF'
@@ -17,6 +17,14 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   // function pad(n) {
   //   return n < 10 ? "00" + n : n >= 10 && n < 100 ? "0" + n : n;
   // }
+
+  const closeModal = (e) => {
+    console.log(e.target.id);
+    if (e.target.id === "pokemon-page-link") {
+      e.preventDefault();
+      setIsClicked(false);
+    }
+  };
 
   return (
     <div key={id}  className="modal-info">
@@ -33,7 +41,7 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
         </div>
         
       </div>
-      <div className="modal-right">
+      <div onClick={closeModal} className="modal-right">
             <div className="more-info-page">
               <Link to={`/pokemon/${name}`}><Button variant='dark'>More info</Button></Link>
             </div>

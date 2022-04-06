@@ -25,7 +25,7 @@
   justify-content: space-between;
   border-radius: 15px;
   background-color: #F3F3F3;
-  animation: bounceInDown .35s;
+  animation: bounceInDown .5s;
 }
 
 .modal-header {
