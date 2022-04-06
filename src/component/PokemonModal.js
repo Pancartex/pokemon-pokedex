@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TYPE_COLORS, TYPE_COLORS_SHADOW } from "../component/Colors";
 import Bar from './Bar'
+//Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button'
 
 const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
   const CoolBackground = {
@@ -32,7 +35,7 @@ const PokemonModal = ({ image, name, abilities, types, stats, id }) => {
       </div>
       <div className="modal-right">
             <div className="more-info-page">
-              <Link to={`/pokemon/${name}`}>More info</Link>
+              <Link to={`/pokemon/${name}`}><Button variant='dark'>More info</Button></Link>
             </div>
         <div className="stat-container">
           <div className="stat-bars">
