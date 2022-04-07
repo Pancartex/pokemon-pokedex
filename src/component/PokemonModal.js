@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TYPE_COLORS, TYPE_COLORS_SHADOW } from "../component/Colors";
 import Bar from './Bar'
+//Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button'
 
 const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked}) => {
   const CoolBackground = {
@@ -16,7 +19,6 @@ const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked})
   // }
 
   const closeModal = (e) => {
-    console.log(e.target.id);
     if (e.target.id === "pokemon-page-link") {
       e.preventDefault();
       setIsClicked(false);
@@ -40,13 +42,13 @@ const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked})
       </div>
       <div onClick={closeModal} className="modal-right">
             <div className="more-info-page">
-              <Link id="pokemon-page-link" to={`/pokemon/${name}`}>More info</Link>
+              <Link to={`/pokemon/${name}`}><Button id="pokemon-page-link" variant='dark'>More info</Button></Link>
             </div>
         <div className="stat-container">
           <div className="stat-bars">
           {stats.map((stat, index) => {
               return (
-                <div>
+                <div key={index}>
                   <p>{stat.name}</p>
                   <p>{stat.base_stat}</p>
                   <div className="bar-container">
