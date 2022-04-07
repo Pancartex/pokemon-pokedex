@@ -59,9 +59,9 @@ function PokemonDetail() {
           }
         >
           <section className="detail-stats">
-            {pokemonInfo.stats.map((stat) => {
+            {pokemonInfo.stats.map((stat, index) => {
               return (
-                <span id={stat.stat.name}>
+                <span id={stat.stat.name} key={index}>
                   <label>
                     <strong>{stat.stat.name}</strong>: {stat.base_stat}
                   </label>

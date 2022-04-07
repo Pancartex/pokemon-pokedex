@@ -19,7 +19,6 @@ const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked})
   // }
 
   const closeModal = (e) => {
-    console.log(e.target.id);
     if (e.target.id === "pokemon-page-link") {
       e.preventDefault();
       setIsClicked(false);
@@ -43,13 +42,13 @@ const PokemonModal = ({ image, name, abilities, types, stats, id, setIsClicked})
       </div>
       <div onClick={closeModal} className="modal-right">
             <div className="more-info-page">
-              <Link to={`/pokemon/${name}`}><Button variant='dark'>More info</Button></Link>
+              <Link to={`/pokemon/${name}`}><Button id="pokemon-page-link" variant='dark'>More info</Button></Link>
             </div>
         <div className="stat-container">
           <div className="stat-bars">
           {stats.map((stat, index) => {
               return (
-                <div>
+                <div key={index}>
                   <p>{stat.name}</p>
                   <p>{stat.base_stat}</p>
                   <div className="bar-container">
