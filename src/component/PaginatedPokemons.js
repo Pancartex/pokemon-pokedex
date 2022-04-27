@@ -60,25 +60,27 @@ export default function PaginatedPokemons({ pokemonData, getPokemon }) {
 	return (
 		<>
 			<ul className="pokemon-list">{pokemonList()}</ul>
-			<ReactPaginate
-				breakLabel="..."
-				nextLabel="next >"
-				onPageChange={handlePageClick}
-				pageRangeDisplayed={3}
-				pageCount={pageCount}
-				previousLabel="< previous"
-				renderOnZeroPageCount={null}
-				pageClassName="page-item pagination-background"
-				pageLinkClassName="page-link pagination-background"
-				previousClassName="page-item pagination-background"
-				previousLinkClassName="page-link pagination-background"
-				nextClassName="page-item pagination-background"
-				nextLinkClassName="page-link pagination-background"
-				breakClassName="page-item pagination-background"
-				breakLinkClassName="page-link pagination-background"
-				containerClassName="pagination pagination-background"
-				activeClassName="active"
-			/>
+			<div className="pagination-container">
+				<ReactPaginate
+					breakLabel="..."
+					nextLabel="next >"
+					onPageChange={handlePageClick}
+					pageRangeDisplayed={3}
+					pageCount={pageCount}
+					previousLabel="< previous"
+					renderOnZeroPageCount={null}
+					pageClassName="page-item pagination-background"
+					pageLinkClassName="page-link pagination-background"
+					previousClassName="page-item pagination-background"
+					previousLinkClassName="page-link pagination-background"
+					nextClassName="page-item pagination-background"
+					nextLinkClassName="page-link pagination-background"
+					breakClassName="page-item pagination-background"
+					breakLinkClassName="page-link pagination-background"
+					containerClassName="pagination pagination-background"
+					activeClassName="active"
+				/>
+			</div>
 		</>
 	);
 }
